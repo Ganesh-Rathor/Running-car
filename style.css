@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+    animation: shakeBody linear infinite 3s ;
+
+}
+.sky{
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.tree{
+    background-image: url(trees.png);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+}
+.road{
+    background-image: url(track.png);
+    background-repeat: repeat-x;
+    height: 40vh;
+    width: 900%;
+    position: absolute;
+    top:80vh;
+    animation: roadMove linear 3s infinite;
+}
+
+.car{
+    background-image: url(car_body.png);
+    background-size: cover;
+    height: 6rem;
+    width: 19rem;
+    position: absolute;
+    bottom: 70px;
+    left: 430px;
+    animation: shake 3s infinite linear;
+
+}
+
+.wheel1 img{
+    height: 75px;
+    position: relative;
+    width: 70px;
+    bottom: -36px;
+    left: 35px;
+    animation: wheelRotation linear .3s infinite;
+}
+
+.wheel2 img{
+    height: 70px;
+    width: 70px;
+    position: relative;
+    left: 207px;
+    top: -42px;
+    animation: wheelRotation linear .3s infinite;
+}
+
+/* Animation  */
+@keyframes wheelRotation{
+    100%{
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes roadMove{
+    100%{
+        transform: translateX(-500vh);
+    }
+}
+
+@keyframes shake{
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+        
+    100%{
+        transform:translateY(-5px);
+    }
+        
+}
+
+@keyframes shakeBody {
+    0%{
+        transform: translateY(-10px);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+
+    
+}
+
+@media screen and (max-width: 800px) {
+    .car{
+        left: 100px
+    }
+}
